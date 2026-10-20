@@ -3,6 +3,10 @@ from typing import Annotated, Optional
 from pydantic import BaseModel, EmailStr, Field
 
 
+class UserOut(BaseModel):
+    id: int
+    email: EmailStr
+
 class PostBase(BaseModel):
     title: str
     content: str
@@ -24,10 +28,6 @@ class PostOut(BaseModel):
 class UserCreate(BaseModel):
     email: EmailStr
     password: str
-
-class UserOut(BaseModel):
-    id: int
-    email: EmailStr
 
 class UserLogin(BaseModel):
     email: EmailStr
